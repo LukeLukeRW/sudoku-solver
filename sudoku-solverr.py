@@ -1,3 +1,6 @@
+import tkinter
+import time
+
 def main(root):
     entries = []
     for i in range(9):
