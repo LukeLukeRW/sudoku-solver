@@ -9,14 +9,18 @@ def main(root,start):
         entries.append(row_entries)
 
     if start is True:
+        print(entries)
         return entries
     
 def the_start(root):
-    start_button = tkinter.Button(root,width=10,justify='right')
+    def returns():
+        return 1
+    start_button = tkinter.Button(root,width=10,justify='right',text='Submit',command=returns())
     start_button.grid(row=10,column=10,padx=3,pady=3)
+    return returns
 
 if __name__ == '__main__':
     root = tkinter.Tk()
-    sudoku_entry = main(root,the_start())
+    sudoku_entry = main(root,the_start(root))
     print(sudoku_entry)
     root.mainloop()
