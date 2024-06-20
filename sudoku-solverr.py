@@ -1,7 +1,4 @@
-import tkinter
-import time
-
-def main(root):
+def main(root,start):
     entries = []
     for i in range(9):
         row_entries = []
@@ -11,9 +8,15 @@ def main(root):
             row_entries.append(entry)
         entries.append(row_entries)
 
+    if start is True:
+        return entries
+    
+def the_start(root):
+    start_button = tkinter.Button(root,width=10,justify='right')
+    start_button.grid(row=10,column=10,padx=3,pady=3)
 
 if __name__ == '__main__':
     root = tkinter.Tk()
-    main(root)
-    
+    sudoku_entry = main(root,the_start())
+    print(sudoku_entry)
     root.mainloop()
